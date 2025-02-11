@@ -3,7 +3,7 @@ Analysis of factors driving used car prices and targeted recommendations to used
 
 We use the CRISP-DM framework as a basis for analysis of the factors driving used car prices. 
 
-Summary of findings: The results of our findings demonstrate that model, age, and a bit less importantly, number of miles on a car's odometer, are key ingredients in determining a used car price. More specifically, the best models can be as much as $22k more valuable than the worse models. A new car with very little usage can be worth as much as $30k more than an older car, with more variance at higher prices.
+Summary of findings: The results of our findings demonstrate that model, age ("year"), and a bit less importantly, number of miles on a car's odometer, are key ingredients in determining a used car price. More specifically, the best models can be as much as $22k more valuable than the worse models. A new car with very little usage can be worth as much as $30k more than an older car, with more variance at higher prices.
 
 There are other important factors. The secondary factors that we recommend used car dealers consider when evaluating inventory are: # of cylinders, condition of the car and whether "4wd" is there. This is the high level summary, but we break it down in depth for our used car dealer clients.
 
@@ -17,7 +17,9 @@ a) Cylinder - We predict that having 8 cylinders adds 3,800 in value to a car an
 
 b) Odometer - We predict that a car with 150,000 miles on it is worth $3,500 less than a car with 50,000 miles on it. The "coefficient" is -0.035 on the model. Now, there are cars with 500,000 miles on them, and clearly the model would predict a significant loss in value there, but those cars are few and far between, and for most cars, the "odometer" factor has only a moderate influence. Why? Because age ("year") and "condition" are similar factors that play a role and diminish the effect of the "odometer" on car value. In simple English, it's the condition of the car, the age of the car, AND the mileage of the car!
 
-c) Drive - The variable that seems to matter here is whether a car is "4wd" or not. "4wd" cars command a premium of $2,550 vs other drive types.
+c) Drive - The variable that seems to matter here is whether a car is "4wd" or not. "4wd" cars command a premium of $2,550 vs other drive types
+
+d) Condition - A car in "new" condition should be worth as much as 8,000 more than a car in "salvage" condition. So, why is this category not more important? The vast majority of cars are in the middle - "good" or "excellent" - and the next most populated category is "like new." So, an "excellent" car should be worth $1,640 more than a "good" car, which is the important takeaway here.
 
 Data used: used car dataset from Kaggle, vehicles.csv
 Key assumptions made: SFS plus LinearRegression, along with key transformations of features (converting year to polynomial of degree 2 for example) will be a sufficient modelling approach, and reducing the dataset substantially by getting rid of certain rows with NAs, rather than imputing the values, will still produce robust restults
